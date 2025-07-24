@@ -51,10 +51,22 @@
       border: none;
       border-radius: 6px;
       cursor: pointer;
+      margin-right: 10px;
     }
 
     button:hover {
       background-color: #0056b3;
+    }
+
+    .download-link {
+      font-size: 16px;
+      color: #007BFF;
+      text-decoration: underline;
+      margin-left: 10px;
+    }
+
+    .download-link:hover {
+      color: #0056b3;
     }
 
     textarea {
@@ -87,23 +99,24 @@
 
   <div class="main-container">
     <div class="image-container">
-      <img src="01_reverseNumber.png" alt="Problem Statement">
+      <img src="problem-statement.png" alt="Problem Statement">
     </div>
 
     <div class="solution-container">
       <div class="button-container">
         <button onclick="loadSolution()">Solution</button>
+        <button onclick="resetView()">Reset</button>
+        <a class="download-link" href="https://raw.githubusercontent.com/your-username/javascript-exercises/main/assignments/01_reverseNumber.js" download>Download JS File</a>
       </div>
       <textarea id="solutionBox" readonly></textarea>
       <textarea id="runInstructions" readonly>
 Instructions to run JS code locally:
 
-1. Download .js file or copy paste contents of solution box in your .js file.
-2. Open terminal window. Go to the folder where you have copied .js file.
-3. Run the command: node <.js filename>  
+1. Open terminal window. Go to the folder where the .js file is located.
+2. Run the command: node <.js filename>  
    e.g. node 01_reverseNumber.js  
    (Make sure Node.js is installed on your laptop)
-4. To check console logs in the browser, open an HTML file that includes the JS file:
+3. To check console logs in the browser, open an HTML file that includes the JS file:
    <script src="01_reverseNumber.js"></script>
    Then open the HTML file in your browser and press F12 to view logs in the Console tab.
       </textarea>
@@ -113,7 +126,7 @@ Instructions to run JS code locally:
   <script>
     async function loadSolution() {
       try {
-        const response = await fetch('https://raw.githubusercontent.com/milanmmore/javascriptTutorials/main/assignments/01_reverseNumber.js');
+        const response = await fetch('https://raw.githubusercontent.com/your-username/javascript-exercises/main/assignments/01_reverseNumber.js');
         if (!response.ok) throw new Error('File not found');
         const code = await response.text();
         document.getElementById('solutionBox').value = code;
@@ -123,6 +136,12 @@ Instructions to run JS code locally:
         alert('Unable to load solution file.');
         console.error(error);
       }
+    }
+
+    function resetView() {
+      document.getElementById('solutionBox').value = '';
+      document.getElementById('solutionBox').style.display = 'none';
+      document.getElementById('runInstructions').style.display = 'none';
     }
   </script>
 
