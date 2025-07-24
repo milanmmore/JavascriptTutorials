@@ -10,7 +10,7 @@ function reverseNumber(num) {
     return console.log(`reverse number of ${num} is ${reversed}`);
 };
 
-reverseNumber(12345);
+reverseNumber(1234);
 reverseNumber(-567);
 reverseNumber(1200);
 reverseNumber(0);
