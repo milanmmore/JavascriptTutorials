@@ -126,7 +126,7 @@ Instructions to run JS code locally:
   <script>
     async function loadSolution() {
       try {
-        const response = await fetch('https://raw.githubusercontent.com/myuser/javascriptTutorials/main/assignments/01_reverseNumber.js');
+        const response = await fetch('https://raw.githubusercontent.com/milanmmore/javascriptTutorials/main/assignments/01_reverseNumber.js');
         if (!response.ok) throw new Error('File not found');
         const code = await response.text();
         document.getElementById('solutionBox').value = code;
