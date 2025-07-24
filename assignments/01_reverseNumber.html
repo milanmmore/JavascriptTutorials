@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Javascript Coding Exercise</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      background-color: #f9f9f9;
+    }
+
+    h1, h2 {
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    .main-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .image-container {
+      width: 50%;
+      text-align: center;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
+
+    .solution-container {
+      width: 50%;
+    }
+
+    .button-container {
+      text-align: left;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    textarea {
+      width: 100%;
+      height: 300px;
+      font-family: monospace;
+      font-size: 14px;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      display: none;
+      white-space: pre;
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Javascript Coding Exercise</h1>
+  <h2>Reverse a Number</h2>
+
+  <div class="main-container">
+    <div class="image-container">
+      <img src="01_reverseNumber.png" alt="Problem Statement">
+    </div>
+
+    <div class="solution-container">
+      <div class="button-container">
+        <button onclick="loadSolution()">Solution</button>
+      </div>
+      <textarea id="solutionBox" readonly></textarea>
+    </div>
+  </div>
+
+  <script>
+    async function loadSolution() {
+      try {
+        const response = await fetch('https://raw.githubusercontent.com/milanmmore/javascriptTutorials/main/assignments/01_reverseNumber.js');
+        if (!response.ok) throw new Error('File not found');
+        const code = await response.text();
+        const box = document.getElementById('solutionBox');
+        box.value = code;
+        box.style.display = 'block';
+      } catch (error) {
+        alert('Unable to load solution file.');
+        console.error(error);
+      }
+    }
+  </script>
+
+</body>
+</html
