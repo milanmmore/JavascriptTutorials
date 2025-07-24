@@ -99,14 +99,14 @@
 
   <div class="main-container">
     <div class="image-container">
-      <img src="problem-statement.png" alt="Problem Statement">
+      <img src="01_reverseNumber.png" alt="Problem Statement">
     </div>
 
     <div class="solution-container">
       <div class="button-container">
         <button onclick="loadSolution()">Solution</button>
         <button onclick="resetView()">Reset</button>
-        <a class="download-link" href="https://raw.githubusercontent.com/your-username/javascript-exercises/main/assignments/01_reverseNumber.js" download>Download JS File</a>
+        <a class="download-link" href="https://raw.githubusercontent.com/milanmmore/javascriptTutorials/main/assignments/01_reverseNumber.js" download>Download JS File</a>
       </div>
       <textarea id="solutionBox" readonly></textarea>
       <textarea id="runInstructions" readonly>
@@ -126,7 +126,7 @@ Instructions to run JS code locally:
   <script>
     async function loadSolution() {
       try {
-        const response = await fetch('https://raw.githubusercontent.com/your-username/javascript-exercises/main/assignments/01_reverseNumber.js');
+        const response = await fetch('https://raw.githubusercontent.com/milanmmore/javascriptTutoirials/main/assignments/01_reverseNumber.js');
         if (!response.ok) throw new Error('File not found');
         const code = await response.text();
         document.getElementById('solutionBox').value = code;
