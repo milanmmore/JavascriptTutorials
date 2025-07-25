@@ -64,6 +64,20 @@ document.querySelectorAll('#challenges a').forEach(a => {
   a.parentNode.appendChild(star);
 });
 
+document.querySelectorAll('.challenge-category').forEach(category => {
+  const quizBtn = document.createElement('button');
+  quizBtn.textContent = '🧠 Take a quiz';
+  quizBtn.style.marginTop = '10px';
+  quizBtn.style.display = 'block';
+
+  quizBtn.onclick = () => {
+    const heading = category.querySelector('h3').textContent;
+    alert(`Quiz coming soon for ${heading}!`);
+  };
+
+  category.appendChild(quizBtn);
+});
+
 // Inject quiz buttons (placeholder)
 document.querySelectorAll('#challenges details').forEach(detail => {
   const quizBtn = document.createElement('button');
