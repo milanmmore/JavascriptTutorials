@@ -64,3 +64,19 @@ footer {
   font-size: 14px;
   background-color: #eee;
 }
+
+details summary {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5em 0;
+}
+
+details[open] summary::after {
+  content: "▲";
+  float: right;
+}
+
+details summary::after {
+  content: "▼";
+  float: right;
+}
