@@ -36,6 +36,7 @@ document.querySelectorAll('#challenges li').forEach((li, i) => {
 });
 
 // Progress tracking
+/*
 document.querySelectorAll('#challenges a').forEach(a => {
   const checkbox = document.createElement('input');
   checkbox.type = 'checkbox';
@@ -46,7 +47,7 @@ document.querySelectorAll('#challenges a').forEach(a => {
   );
   a.parentNode.insertBefore(checkbox, a);
 });
-
+*/
 // Bookmark favorites
 document.querySelectorAll('#challenges a').forEach(a => {
   const star = document.createElement('span');
