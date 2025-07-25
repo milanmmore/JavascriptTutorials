@@ -80,3 +80,45 @@ details summary::after {
   content: "▼";
   float: right;
 }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Dark mode */
+body.dark {
+  background: #121212;
+  color: #eee;
+}
+.dark a { color: #6cf; }
+
+/* Sticky sidebar */
+.sidebar {
+  position: sticky;
+  top: 0;
+}
+
+/* Responsive sidebar */
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+  .sidebar.active {
+    display: block;
+  }
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    margin: 10px;
+  }
+}
+
