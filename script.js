@@ -1,13 +1,18 @@
 // Auto-expand matching <details> and highlight
 document.getElementById('search').addEventListener('input', function () {
   const query = this.value.toLowerCase();
+
   document.querySelectorAll('#challenges details').forEach(detail => {
     const items = detail.querySelectorAll('li');
     let match = false;
 
     items.forEach(li => {
       const text = li.textContent.toLowerCase();
-      if (text.includes(query)) {
+      if (query === '') {
+        li.innerHTML = li.textContent;
+        li.style.display = ''; // Reset
+        match = true;
+      } else if (text.includes(query)) {
         match = true;
         li.innerHTML = li.textContent.replace(
           new RegExp(query, 'gi'),
@@ -18,10 +23,11 @@ document.getElementById('search').addEventListener('input', function () {
         li.style.display = 'none';
       }
     });
-
     detail.open = match;
   });
 });
+
+
 
 // Fade-in animation on load
 document.querySelectorAll('#challenges li').forEach((li, i) => {
