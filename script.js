@@ -67,3 +67,6 @@ document.querySelectorAll('#challenges details').forEach(detail => {
   detail.appendChild(quizBtn);
 });
 
+document.querySelector('.hamburger').addEventListener('click', () => {
+  document.querySelector('.sidebar').classList.toggle('active');
+});
