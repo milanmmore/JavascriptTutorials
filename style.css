@@ -122,3 +122,9 @@ body.dark {
   }
 }
 
+section#challenges {
+  padding: 20px;
+  overflow-wrap: break-word;
+}
+
+
