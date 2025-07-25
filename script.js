@@ -70,6 +70,11 @@ document.querySelectorAll('.challenge-category').forEach(category => {
   quizBtn.style.marginTop = '10px';
   quizBtn.style.display = 'block';
 
+  // 👇 Gentle entrance
+  quizBtn.style.opacity = '0';
+  quizBtn.style.animation = 'fadeIn 0.4s ease forwards';
+  quizBtn.style.animationDelay = '0.2s';
+
   quizBtn.onclick = () => {
     const heading = category.querySelector('h3').textContent;
     alert(`Quiz coming soon for ${heading}!`);
