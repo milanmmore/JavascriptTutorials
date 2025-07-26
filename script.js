@@ -96,3 +96,23 @@ document.querySelectorAll('#challenges details').forEach(detail => {
 document.querySelector('.hamburger').addEventListener('click', () => {
   document.querySelector('.sidebar').classList.toggle('active');
 });
+
+document.querySelectorAll('.sidebar a[data-target]').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('data-target');
+    const section = document.getElementById(targetId);
+
+    // Close all details
+    document.querySelectorAll('main details').forEach(d => d.open = false);
+
+    if (section) {
+      const details = section.querySelector('details');
+      if (details) {
+        details.open = true;
+      }
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+
